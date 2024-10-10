@@ -2,7 +2,7 @@
   "name": "mybio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alsheikhaminulislam.github.io/valobio/",
+  "homepage": "https://alsheikhaminulislam.github.io/valobio",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tailwindcss/forms": "^0.5.9",
