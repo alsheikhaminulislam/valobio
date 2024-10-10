@@ -13,25 +13,24 @@ const Router = createBrowserRouter([
         path: '/',
         element: <ProtectedRoute > <App /> </ProtectedRoute >,
         // errorElement: <NotFoundPage />,
-        children: []
     },
     {
         path: '/home',
         element: <ProtectedRoute >  <Home /></ProtectedRoute >,
         // errorElement: <NotFoundPage />,
-        children: []
+
     },
     {
         path: '/p/:uid',
         element: <PreviewPage />,
         // errorElement: <NotFoundPage />,
-        children: []
+
     },
     {
         path: '/signin',
-        element:<ProtectedRoute > <LoginPage /> </ProtectedRoute >,
+        element: <ProtectedRoute > <LoginPage /> </ProtectedRoute >,
         // errorElement: <NotFoundPage />,
-        children: []
+
     }
 
 ]);
