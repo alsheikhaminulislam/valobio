@@ -69,3 +69,15 @@ For anyone interested in testing the live server, please follow these steps:
    
 
 This sequence will ensure proper functionality and enable you to experience the application as intended. 
+
+
+
+
+
+
+
+
+# Demo  
+![Demo Image](assets/s1.png)
+![Demo Image](assets/s2.png)
+![Demo Image](assets/s3.png)
