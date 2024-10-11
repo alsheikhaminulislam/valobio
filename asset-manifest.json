@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/valobio/static/css/main.d6d9e2a8.css",
-    "main.js": "/valobio/static/js/main.9c3182d0.js",
+    "main.js": "/valobio/static/js/main.b9d1ca2f.js",
     "static/js/206.e3277629.chunk.js": "/valobio/static/js/206.e3277629.chunk.js",
     "static/media/banner_black.png": "/valobio/static/media/banner_black.8403e7fc07823c607ace.png",
     "static/media/logo.png": "/valobio/static/media/logo.73f58f4cece3e0b1a7c9.png",
@@ -9,6 +9,6 @@
   },
   "entrypoints": [
     "static/css/main.d6d9e2a8.css",
-    "static/js/main.9c3182d0.js"
+    "static/js/main.b9d1ca2f.js"
   ]
 }
