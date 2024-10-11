@@ -27,3 +27,45 @@ This project is a **React TypeScript-based web application** that handles user a
 2. **Install necessary packages** by running the following command in both main directories:
    ```bash
    npm install
+   ```
+3. Start the local servers by running
+   ```bash
+   npm run start
+   ```
+
+Both applications will automatically launch.
+
+
+## Important Notes
+- The entire project is server-side hosted on Render.
+- The Firebase Real-Time Database stores everything, including user images as binary data.
+- The application is designed as a web static worker, which means it can stop occasionally. This is something to consider during live testing.
+
+  
+## Links
+- Render Server Site: Link to Render server
+- Main Website: Link to main site
+- Application Source for Both Sites: Link to source code
+
+## Testing the Live Server
+
+For anyone interested in testing the live server, please follow these steps:
+
+1. **Load the following link** first:
+   - [Live Server](https://valobioserver.onrender.com/)
+   
+2. After loading the above link, proceed to the second link:
+   - [Main Website](https://alsheikhaminulislam.github.io/valobio/)
+## Deployment on Render
+**If testing on Render (live server) for the first time, note that the server may take up to 2-5 minutes to start**. Please allow for this initialization time.
+
+
+
+## Installation and Local Setup
+
+1. **Clone both repositories**:
+   - Client-side: [GitHub - valobio](https://github.com/alsheikhaminulislam/valobio/)
+   - Server-side: [GitHub - valobioserver](https://github.com/alsheikhaminulislam/valobioserver/)
+   
+
+This sequence will ensure proper functionality and enable you to experience the application as intended. 
