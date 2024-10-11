@@ -70,7 +70,7 @@ const ProfilePage = ({
                             <img
                                 src={selectedImage}
                                 alt="Thumbnail Preview"
-                                className="mx-auto h-full w-full object-cover rounded-md"
+                                className="mx-auto h-[300px] w-[300px] rounded-md"
                             />
                             <button
                                 onClick={removeImage}
