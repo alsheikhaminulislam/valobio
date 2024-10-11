@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /reactjs-projects/valobio/
+  
+    # Serve index.html for valid routes
+    RewriteRule ^index\.html$ - [L]
+    
+    # Check if the requested file or directory exists
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # If the file doesn't exist, route the request to index.html
+    RewriteRule . /reactjs-projects/valobio/index.html [L]
+  </IfModule>
+  
+  # Handle 404 errors by serving the 404.html page
+  ErrorDocument 404 /reactjs-projects/valobio/404.html
+  

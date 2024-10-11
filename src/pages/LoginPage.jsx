@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useGlobalContext } from "../context/ContextProvider";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -121,7 +121,7 @@ const LoginPage = () => {
                 {/* Toggle between login and signup */}
                 <p className="mt-10 text-center text-sm text-gray-500" onClick={() => setLogin((prev) => !prev)}>
                     {isLogin ? "I don't have an account." : "I have an account."}
-                    <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                    <a href="/" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                         {isLogin ? " Sign up." : " Sign in."}
                     </a>
                 </p>

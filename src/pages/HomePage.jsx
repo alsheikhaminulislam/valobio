@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaGithub } from "react-icons/fa";
 import Header from '../components/Header';
 import MobileView from '../components/MobileView';
@@ -64,7 +64,7 @@ export default function Home() {
                 setLinkItem(links);
                 setUid(response.data.uid);
             })
-            .catch((error) => {   });
+            .catch((error) => { });
     }, []);
 
     // Function to add a new link item (Github by default)
@@ -89,8 +89,8 @@ export default function Home() {
             userEmail,
             image: selectedImage || ""
         })
-        .then((response) => toast.success(response.data.message))
-        .catch((error) => toast.error(error));
+            .then((response) => toast.success(response.data.message))
+            .catch((error) => toast.error(error));
     };
 
     // Function to remove the selected image
@@ -101,24 +101,24 @@ export default function Home() {
             <Header page={page} setPage={setPage} uid={uid} />
             <main className="relative md:pt-6 min-h-[calc(100vh-176px)] lg:flex sm:block">
                 {/* Left Side: Mobile View */}
-                <MobileView 
+                <MobileView
                     selectedImage={selectedImage}
                     firstName={firstName}
                     lastName={lastName}
                     userEmail={userEmail}
                     linkItem={linkItem}
-                    setLinkItem={setLinkItem} 
+                    setLinkItem={setLinkItem}
                 />
 
                 {/* Right Side: Links or Profile Page */}
                 {page === 'links' ? (
-                    <LinksPage 
-                        linkItem={linkItem} 
-                        setLinkItem={setLinkItem} 
-                        addNewLink={addNewLink} 
+                    <LinksPage
+                        linkItem={linkItem}
+                        setLinkItem={setLinkItem}
+                        addNewLink={addNewLink}
                     />
                 ) : (
-                    <ProfilePage 
+                    <ProfilePage
                         selectedImage={selectedImage}
                         removeImage={removeImage}
                         setFirstName={setFirstName}

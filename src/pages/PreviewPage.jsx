@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useGlobalContext } from '../context/ContextProvider';
 
 import { iconMap } from '../assets/Logo';
 import { FaEdit, FaShareAltSquare, FaArrowRight } from "react-icons/fa";
+import { renderUserInfo } from '../components/renderUserInfo';
 const PreviewPage = () => {
   const { uid } = useParams();
   const context = useGlobalContext()
   const usenavigate = useNavigate()
-  const location = useLocation()
   const [selectedImage, setSelectedImage] = useState(null)
-  const [firstName, setFirstName] = useState(null)
-  const [lastName, setLastName] = useState(null)
-  const [userEmail, setUserEmail] = useState(null)
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [userEmail, setUserEmail] = useState("")
   const [linkItem, setLinkItem] = useState([])
   const [ownpage, setOwnPage] = useState(false)
 
@@ -79,7 +79,7 @@ const PreviewPage = () => {
                       console.error('Failed to copy: ', err);
                     });
                 }}
-                className="btn border-2 border-[#A5CDC4] text-[#A5CDC4] flex hover:text-white bg-white shadow-sm rounded-md"> 
+                className="btn border-2 border-[#A5CDC4] text-[#A5CDC4] flex hover:text-white bg-white shadow-sm rounded-md">
                 <FaShareAltSquare className="text-xl" />
                 <span className="hidden md:block">Share Link</span>
               </button>
@@ -93,27 +93,54 @@ const PreviewPage = () => {
 
               {/* Profile Image */}
               <div className="flex justify-center w-full">
-              <img className=" mask mask-circle h-[100px]" src={selectedImage} alt="Profile Image" />
+                {selectedImage ? (
+                  <img className="mask mask-circle h-[100px]" src={selectedImage} alt="Profile" />
+                ) : (
+                  <div className="skeleton h-[100px] w-[100px] shrink-0 rounded-full mt-10"></div>
+                )}
               </div>
+
               {/* Profile Info */}
-              <div className="px-6 py-4 text-center w-full">
-                <div className='font-bold text-[#8B8B8B]'>{firstName} {lastName}</div>
-                <p className='font-bold text-[#8B8B8B]/60 text-sm'>{userEmail}</p>
-                {linkItem?.sort((a, b) => a.position - b.position).map((data, key) => (
-                  <div
-                    key={key}
-                    className="mt-3 text-white flex justify-between h-[45px] rounded-lg p-3 cursor-pointer"
-                    style={{ backgroundColor: data.color }} // Dynamic background color
-                    onClick={() => window.location.href = data.link}
-                  >
-                    <div className="flex items-center">
-                      {data.icon} {data.name}
+              <div className={`px-6 py-4  text-center w-full items-center justify-center ${!lastName?' flex flex-col':''}`}>
+                {/* User Name */}
+                {renderUserInfo(
+                  `${firstName} ${lastName}`,
+                  `font-bold text-[#8B8B8B]  ${!lastName?'skeleton h-4 w-2/5 ':''}`
+                )}
+
+                {/* User Email */}
+                {renderUserInfo(
+                  userEmail,
+                  `font-bold text-[#8B8B8B]/60 text-sm   ${!userEmail?'w-5/5 skeleton h-2 ':''}`
+                )}
+
+                {/* Links */}
+                {linkItem && linkItem.length ? (
+                  linkItem.sort((a, b) => a.position - b.position).map((data, key) => (
+                    <div
+                      key={key}
+                      className="mt-3 text-white flex justify-between h-[45px] rounded-lg p-3 cursor-pointer"
+                      style={{ backgroundColor: data.color }} // Dynamic background color
+                      onClick={() => window.location.href = data.link}
+                    >
+                      <div className="flex items-center">
+                        {data.icon} {data.name}
+                      </div>
+                      <FaArrowRight className="text-xl" />
                     </div>
-                    <FaArrowRight className="text-xl" />
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <> 
+                  <div className="mt-3 bg-gray-200 text-white flex justify-between w-4/5 h-[45px] rounded-lg p-3 skeleton"></div>
+                  <div className="mt-3 bg-gray-200 text-white flex justify-between w-4/5 h-[45px] rounded-lg p-3 skeleton"></div>
+                  <div className="mt-3 bg-gray-200 text-white flex justify-between w-4/5 h-[45px] rounded-lg p-3 skeleton"></div>
+                  <div className="mt-3 bg-gray-200 text-white flex justify-between w-4/5 h-[45px] rounded-lg p-3 skeleton"></div>
+                  <div className="mt-3 bg-gray-200 text-white flex justify-between w-4/5 h-[45px] rounded-lg p-3 skeleton"></div>
+                  </>
+                )}
               </div>
             </div>
+
           </div>
         </div>
 

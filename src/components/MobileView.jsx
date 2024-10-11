@@ -1,15 +1,10 @@
 import { FaArrowRight } from "react-icons/fa";
+import { renderUserInfo } from "./renderUserInfo";
 
 // MobileView Component displays user profile information and social media links.
 const MobileView = ({ selectedImage, firstName, lastName, userEmail, linkItem }) => {
     // Helper function to render user information or skeleton placeholders
-    const renderUserInfo = (data, skeletonClass) => {
-        return data ? (
-            <div className={`${skeletonClass} mt-2`}>{data}</div>
-        ) : (
-            <div className={`${skeletonClass} h-4 w-[160px] mt-2`}></div>
-        );
-    };
+   
 
     return (
         <div className="flex-2 bg-white p-4 flex flex-col rounded-lg m-2 shadow-sm">

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/valobio/static/css/main.b326cde0.css",
+    "main.js": "/valobio/static/js/main.38e3157f.js",
+    "static/js/206.e3277629.chunk.js": "/valobio/static/js/206.e3277629.chunk.js",
+    "static/media/banner_black.png": "/valobio/static/media/banner_black.8403e7fc07823c607ace.png",
+    "static/media/logo.png": "/valobio/static/media/logo.73f58f4cece3e0b1a7c9.png",
+    "index.html": "/valobio/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.b326cde0.css",
+    "static/js/main.38e3157f.js"
+  ]
+}

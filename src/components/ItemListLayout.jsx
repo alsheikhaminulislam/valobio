@@ -59,7 +59,9 @@ const ItemListLayout = ({ data, i, LinkItem }) => {
 
             {/* Dropdown menu for platform selection */}
             {isOpen && (
-                <ul className="absolute w-full bg-white shadow-lg mt-1 rounded-md z-10">
+                <ul className="absolute w-full bg-white shadow-lg mt-1 rounded-md z-10"
+                
+            onClick={toggleDropdown}>
                     {iconMap.map((platform, key) => (
                         <li
                             key={key}

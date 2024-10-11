@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 // import React from 'react';
 import ProtectedRoute from './ProtectedRoute';
 import App from '../App'; // Adjust the import path as needed 
@@ -8,28 +8,28 @@ import LoginPage from '../pages/LoginPage';
 import Home from '../pages/HomePage';
 
 // Define the routes with type annotations
-const Router = createBrowserRouter([
+const Router = createHashRouter([
     {
         path: '/',
         element: <ProtectedRoute > <App /> </ProtectedRoute >,
-        // errorElement: <NotFoundPage />,
+        errorElement: <NotFoundPage />,
     },
     {
         path: '/home',
         element: <ProtectedRoute >  <Home /></ProtectedRoute >,
-        // errorElement: <NotFoundPage />,
+        errorElement: <NotFoundPage />,
 
     },
     {
         path: '/p/:uid',
         element: <PreviewPage />,
-        // errorElement: <NotFoundPage />,
+        errorElement: <NotFoundPage />,
 
     },
     {
         path: '/signin',
         element: <ProtectedRoute > <LoginPage /> </ProtectedRoute >,
-        // errorElement: <NotFoundPage />,
+        errorElement: <NotFoundPage />,
 
     }
 
